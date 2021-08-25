@@ -17,7 +17,7 @@
     />
 
     <meta property="og:title" content="Can I Play Destiny with Dani Yet?" />
-    <meta property="og:description" content="No." />
+    <meta property="og:description" content="Yes!!!" />
     <meta property="og:url" content="http://caniplaydestinywithdaniyet.com/" />
     <meta property="og:type" content="website" />
 
@@ -62,45 +62,7 @@
   <body>
     <div>
       <h1>Can I Play Destiny with Dani Yet?</h1>
-      <h2>No.</h2>
-      <p>
-        But when cross play comes out
-        <span class="countdown">on <strong>Tuesday, August 24th</strong></span>
-        I can.
-      </p>
+      <h2 class="answer">Yes!</h2>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/date-fns/1.30.1/date_fns.min.js"></script>
-    <script type="text/javascript">
-      let humanizeFutureToNow = (fDate) => {
-        let result = [],
-          now = new Date();
-        let parts = ["day", "hour", "minute"];
-
-        parts.forEach((p, i) => {
-          let uP = p.charAt(0).toUpperCase() + p.slice(1);
-          let t = dateFns[`differenceIn${uP}s`](fDate, now);
-          if (t) {
-            result.push(
-              `${i === parts.length - 1 ? "and " : ""}${t} ${uP.toLowerCase()}${
-                t === 1 ? "" : "s"
-              }`
-            );
-            if (i < parts.length) fDate = dateFns[`sub${uP}s`](fDate, t);
-          }
-        });
-        return result.join(", ");
-      };
-
-      function updateCountdown() {
-        countdownEl.innerHTML = `in <strong>${humanizeFutureToNow(
-          new Date("2021-08-24T17:00:00Z")
-        )}</strong>`;
-      }
-
-      const countdownEl = document.querySelector(".countdown");
-      updateCountdown();
-      setInterval(updateCountdown, 500);
-    </script>
   </body>
 </html>
